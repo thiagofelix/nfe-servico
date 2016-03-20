@@ -1,0 +1,20 @@
+language: node_js
+notifications:
+  email: false
+before_script:
+  - npm prune
+after_success:
+  - npm run release
+deploy:
+  provider: codedeploy
+  access_key_id: AKIAJQMLKQRZ7PURJOJQ
+  secret_access_key:
+    secure: fiCbr4KjWLsw+eUyK86YGKWovbqp3QFqmdkoiXG9pEho+nqRAdhjlTrjeB3o4dT5GgDErQidqoCWeQir91NcRFWSDjOxQfnUp3Sy41+iYqQVBkVrGn9waFfK2GNjlX/r4HQkW6Xd20qvReikNoV4zS+pT/KHups7EjogeCB2w9rBJfy7ycav4XkT0alsaaaSDqsJdkNFxfFlR9AvGcKnWC1PNJXlK1WU97yBNFr7tlJaeR1kIUl5Bty2XRYhrZZpbtZahCP/Q2HKDYWODo+wUceYwTlcF9UG8ukgVtNUS6faLg2qtp/QdW50ruop2CpxPRF/FNp9ozbnYEHh4mPhDWJjW8/Uix0+LURPDzNZkinETnmFttun880XIZLnr3ugDrsOOtxhxmJCXw9fNs1UrD4oOId/EJFZtskJbW9Ch8QUw+VfV/7KEUjXIKOzk2A0eHz8No3a/iKKIYhoPBMuW97q6YOSzd2vLJVcOWBiFDZksBJr6aW3Y7WaGiZBndm+H2goUmaZlj58nuzpV9ItK+bcD7nsvYfh3SEgzSikmFUcyKXfYtfpOdYh3BAQwf8e7iRe/owSzghI9kSCCEswrmgQWI7wFEsKmUbI7Qv6iPMe0zOAdSxRcjtL7TggLHT9fKxKTYHqIYYMS4PrCqmaOPEaNLbTv/EIw0V0oWxnt58=
+  application: nfe-servico
+  deployment_group: nfe-servico-production
+  bucket: nfe-servico-builds
+  revision_type: github
+  region: sa-east-1
+  skip_cleanup: true
+  on:
+    repo: thiagofelix/nfe-servico
