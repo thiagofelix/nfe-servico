@@ -3,8 +3,6 @@ notifications:
   email: false
 before_script:
   - npm prune
-after_success:
-  - npm run release
 deploy:
   provider: codedeploy
   access_key_id: AKIAJQMLKQRZ7PURJOJQ
