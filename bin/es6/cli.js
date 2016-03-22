@@ -29,6 +29,13 @@ app.get('/', (req, res) => {
   res.status(200).send('Running Successfully')
 })
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://nossanota.surge.sh")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
+
+
 app.get(/nfe/, (req, res) => {
   let link = req.originalUrl.slice(5)
   consultar(link)
