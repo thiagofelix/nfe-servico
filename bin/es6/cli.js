@@ -24,6 +24,11 @@ if (argv.uid) {
 
 const app = express()
 app.use(compression())
+
+app.get('/', (req, res) => {
+  res.status(200).send('Running Successfully')
+})
+
 app.get(/nfe/, (req, res) => {
   let link = req.originalUrl.slice(5)
   consultar(link)
