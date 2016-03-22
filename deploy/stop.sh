@@ -1,3 +1,3 @@
-if ( status personal-site-node | grep start ); then
-  stop personal-site-node
+if ( status nfe-servico | grep start ); then
+  stop nfe-servico
 fi
