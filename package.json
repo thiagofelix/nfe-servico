@@ -56,11 +56,11 @@
     "sinon": "^1.17.3"
   },
   "dependencies": {
-    "bunyan": "^1.8.0",
     "compression": "^1.6.1",
     "express": "^4.13.4",
     "is-root": "^1.0.0",
     "minimist": "^1.2.0",
+    "nfe-biblioteca": "^1.0.2",
     "tcp-bind": "^1.2.0"
   }
 }
