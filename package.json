@@ -3,22 +3,23 @@
   "name": "nfe-servico",
   "version": "0.0.0-semantically-released",
   "description": "Servidor REST para carregar dados sobre Nota Fiscal de Consumidor Eletrônica através do QR Code exibido no DANFE",
-  "main": "lib/nfe-servico.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/thiagofelix/nfe-servico.git"
   },
   "directories": {
-    "lib": "./lib",
+    "bin": "./bin",
     "test": "./test"
   },
+  "bin": "./bin/es5/cli.js",
   "scripts": {
     "commit": "git-cz",
     "pretest": "npm run lint && nsp check",
-    "build": "babel src --out-dir lib",
-    "lint": "eslint src test",
+    "build": "babel bin/es6 --out-dir bin/es5",
+    "lint": "eslint bin test",
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill -i -g @noci",
-    "start": "NODE_ENV=production node lib/nfe-servico.js",
+    "start": "babel-node bin/es6/cli.js",
+    "start:prod": "NODE_ENV=production node bin/es5/cli.js -p 80 -g ec2-user -u ec2-user",
     "prepublish": "npm run build",
     "prerelease": "semantic-release pre",
     "release": "npm publish",
@@ -57,6 +58,9 @@
   "dependencies": {
     "bunyan": "^1.8.0",
     "compression": "^1.6.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "is-root": "^1.0.0",
+    "minimist": "^1.2.0",
+    "tcp-bind": "^1.2.0"
   }
 }
