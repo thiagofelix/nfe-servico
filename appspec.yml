@@ -7,10 +7,16 @@ files:
   - source: /
     destination: /srv/src/
 hooks:
+  AfterInstall:
+    - location: ./deploy/after-install.sh
+      runas: root
   ApplicationStart:
     - location: ./deploy/start.sh
       runas: root
   ApplicationStop:
     - location: ./deploy/stop.sh
       runas: root
-
+  ValidateService:
+    - location: ./deploy/validate.sh
+      runas: root
+      timeout: 60
