@@ -53,5 +53,10 @@
     "nsp": "^2.2.1",
     "semantic-release": "^4.3.5",
     "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.0",
+    "compression": "^1.6.1",
+    "express": "^4.13.4"
   }
 }

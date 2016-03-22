@@ -1,0 +1,16 @@
+# This is an appspec.yml template file for use with AWS CodeDeploy.
+version: 0.0
+os: linux
+files:
+  - source: ./deploy/nfe-servico.conf
+    destination: /etc/init/
+  - source: /
+    destination: /srv/src/
+hooks:
+  ApplicationStart:
+    - location: ./deploy/start.sh
+      runas: root
+  ApplicationStop:
+    - location: ./deploy/stop.sh
+      runas: root
+

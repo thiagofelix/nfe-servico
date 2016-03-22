@@ -10,7 +10,7 @@ deploy:
   application: nfe-servico
   revision_type: github
   region: sa-east-1
-  deployment_group: nfe-servico-production
+  deployment_group: nfe-servico
   skip_cleanup: true
   on:
     repo: thiagofelix/nfe-servico
