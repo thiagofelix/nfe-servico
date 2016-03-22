@@ -6,11 +6,11 @@ deploy:
   access_key_id: AKIAJ6IBA4JZJ4APXP4Q
   secret_access_key:
     secure: hzvkmQdxp42mXcvusoO6YlYj2GeZDJEquPRigRn2M8pmrMLqmJPBHlFAclJBh63YXf/pN38RJSM3wU0TX5s8m30WfdcVTotOsSyjPMtDJuuAZRnKKdbOoZHa5SNPhTjoQypfDBnGuJlaLp9JdcW1a/HJRIl+ZogCSsiiyxK3uRn1WRpUoZzQzzx+qiDzzK1e9T4Elf2oTav+WTarFiVVVuBBJwsyVlt9/9ZaI49K7Tv/29Ek5tPJ8w28RvmiyUWtisQ/7G8Ts4NaEAz931vXuJS8OvOZahsDuRdhl4/yGLeGBUMR0xwYASp1fV6oqJEhjHtH6IV0kfs/KBNDtEtqYkOso+n08tNv54YT7fAp1OJuaH2pQ6yk9ziVgWMiiBmGd2VUPzOcCv7MdYzL4iMSU42OzWwQZEFlugxUSauVLyVmzBGqgo5a69bo3jXT58n2192dsA8Z0fHA6JTeXIOjkOdVVhx+WEdhWk1SkphyL9C/LI+eRHmyzxbiB99OxRNouIDYt4X54e58ZVrjo5XgYblY2Qmv+PQ1aoYn9PAID8yn0NwwM1Os7cECBh8W8r/kW4zWn7dDxj7qaKAzw4jGIsEDe8/TOwFbQQjyKIswFXMdpk6KPxFabwxg4xisE8W2aFLOW7mzIATOHaUY2jKOCWkhGt8CmekWRIwHiBK/IR4=
-  bucket: nfe-servico-builds
   application: nfe-servico
   revision_type: github
   region: sa-east-1
   deployment_group: nfe-servico
   skip_cleanup: true
+  wait-until-deployed: true
   on:
     repo: thiagofelix/nfe-servico
