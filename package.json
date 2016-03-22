@@ -16,7 +16,7 @@
     "commit": "git-cz",
     "pretest": "npm run lint && nsp check",
     "build": "babel bin/es6 --out-dir bin/es5",
-    "lint": "eslint bin test",
+    "lint": "eslint bin/es6 test",
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill -i -g @noci",
     "start": "babel-node bin/es6/cli.js",
     "start:prod": "NODE_ENV=production node bin/es5/cli.js -p 80 -g ec2-user -u ec2-user",

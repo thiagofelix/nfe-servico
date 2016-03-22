@@ -7,13 +7,13 @@ import isRoot from 'is-root'
 
 const argv = minimist(process.argv.slice(2), {
   alias: { p: 'port', u: 'uid', g: 'gid' },
-default: { port: isRoot() ? 80 : 8000 }
+  default: { port: isRoot() ? 80 : 8000 }
 })
 
 const fd = alloc(argv.port)
 
-if (argv.gid) process.setgid(argv.gid);
-if (argv.uid) process.setuid(argv.uid);
+if (argv.gid) process.setgid(argv.gid)
+if (argv.uid) process.setuid(argv.uid)
 
 const server = http.createServer((req, res) => {
   console.log('%d request received', process.pid)
