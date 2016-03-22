@@ -40,5 +40,3 @@ server.listen({fd}, () => {
   console.log('process pid=%d uid=%d gid=%d', process.pid, process.getuid(), process.getgid())
   console.log('listening on: %s', JSON.stringify(server.address()))
 })
-
-
