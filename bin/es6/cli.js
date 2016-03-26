@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import https from 'https'
+import http from 'http'
 import alloc from 'tcp-bind'
 import minimist from 'minimist'
 import isRoot from 'is-root'
@@ -12,7 +12,7 @@ import { consultar } from 'nfe-biblioteca'
 
 const argv = minimist(process.argv.slice(2), {
   alias: { p: 'port', u: 'uid', g: 'gid' },
-  default: { port: isRoot() ? 443 : 8000 }
+  default: { port: isRoot() ? 80 : 8000 }
 })
 
 const fd = alloc(argv.port)
@@ -44,11 +44,7 @@ app.get(/nfe/, (req, res) => {
     .catch(error => res.status(500).json({error}))
 })
 
-const options = {
-  key: fs.readFileSync(path.join('deploy', 'key.pem')),
-  cert: fs.readFileSync(path.join('deploy', 'cert.pem'))
-}
-const server = https.createServer(options, app)
+const server = http.createServer(app)
 server.listen({fd}, () => {
   console.log('process pid=%d uid=%d gid=%d', process.pid, process.getuid(), process.getgid())
   console.log('listening on: %s', JSON.stringify(server.address()))
