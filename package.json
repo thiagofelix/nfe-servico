@@ -19,7 +19,7 @@
     "lint": "eslint bin/es6 test",
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill -i -g @noci",
     "start": "babel-node bin/es6/cli.js",
-    "start:prod": "NODE_ENV=production node bin/es5/cli.js -p 443 -g ec2-user -u ec2-user",
+    "start:prod": "NODE_ENV=production node bin/es5/cli.js -p 80 -g ec2-user -u ec2-user",
     "prepublish": "npm run build",
     "prerelease": "semantic-release pre",
     "release": "npm publish",
