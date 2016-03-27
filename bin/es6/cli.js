@@ -6,8 +6,6 @@ import minimist from 'minimist'
 import isRoot from 'is-root'
 import compression from 'compression'
 import express from 'express'
-import fs from 'fs'
-import path from 'path'
 import { consultar } from 'nfe-biblioteca'
 
 const argv = minimist(process.argv.slice(2), {
